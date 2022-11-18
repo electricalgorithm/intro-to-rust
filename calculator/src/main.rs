@@ -24,16 +24,12 @@ fn main() {
 
 fn operate(operator: char, left_hand: f32, right_hand: f32) -> f32 {
     // A function to convert chars to operations.
-    if operator == '+' {
-        left_hand + right_hand
-    } else if operator == '-' {
-        left_hand - right_hand
-    } else if operator == '/' {
-        left_hand / right_hand
-    } else if operator == '*' {
-        left_hand * right_hand
-    } else {
-        0.0
+    match operator {
+        '+' => left_hand + right_hand,
+        '-' => left_hand - right_hand,
+        '/' => left_hand / right_hand,
+        '*' | 'x' | 'X' => left_hand * right_hand,
+        _ => panic!("Invalid operator used.")
     }
 }
 
